@@ -96,37 +96,45 @@
 
       /* find the clickable trigger (the element that should react to clicking) */
 
-      const clickedElements = document.querySelectorAll(select.menuProduct.clickable);
-      console.log('click', clickedElements);
+      const clickedElement = thisProduct.element.querySelector(select.menuProduct.clickable);
+      console.log('click', clickedElement);
 
       /* START: click event listener to trigger */
+    
+        clickedElement.addEventListener('click', function(event){
+          console.log('clicked');     
 
-      for(let clickedElement of clickedElements) {
-        clickedElement.addEventListener('click', function(){
-          console.log('clicked');
-          }); 
-        }
-
-        /* prevent default action for event */
-
+        /* prevent default action for event */  
+        
+        event.preventDefault();
+        
         /* toggle active class on element of thisProduct */
+
+        thisProduct.element.classList.toggle('active');        
 
         /* find all active products */
 
-        /* START LOOP: for each active product */
+        const activeProducts = document.querySelectorAll('.product .active');
+        console.log(activeProducts, 'activeProduct');
 
-          /* START: if the active product isn't the element of thisProduct */
+          /* START LOOP: for each active product */
 
-            /* remove class active for the active product */
+          for(let activeProduct of activeProducts){
 
-          /* END: if the active product isn't the element of thisProduct */
+            /* START: if the active product isn't the element of thisProduct */
 
-        /* END LOOP: for each active product */
+            if(activeProduct !== thisProduct.element){
 
-      /* END: click event listener to trigger */
-    
-      
+              /* remove class active for the active product */
 
+              activeProduct.classList.remove('active');
+
+            /* END: if the active product isn't the element of thisProduct */
+            }
+          /* END LOOP: for each active product */
+          }
+        });
+        /* END: click event listener to trigger */    
     }
   }
 
