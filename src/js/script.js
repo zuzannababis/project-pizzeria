@@ -114,7 +114,7 @@
 
         /* find all active products */
 
-        const activeProducts = document.querySelectorAll('.product .active');
+        const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
         console.log(activeProducts, 'activeProduct');
 
           /* START LOOP: for each active product */
