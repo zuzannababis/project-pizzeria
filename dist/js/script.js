@@ -110,7 +110,7 @@
         
         /* toggle active class on element of thisProduct */
 
-        thisProduct.element.classList.toggle('active');        
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);        
 
         /* find all active products */
 
@@ -127,7 +127,7 @@
 
               /* remove class active for the active product */
 
-              activeProduct.classList.remove('active');
+              activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
 
             /* END: if the active product isn't the element of thisProduct */
             }
