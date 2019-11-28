@@ -127,7 +127,7 @@
 
               /* remove class active for the active product */
 
-              activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
+              activeProduct.classList.remove('active');
 
             /* END: if the active product isn't the element of thisProduct */
             }
