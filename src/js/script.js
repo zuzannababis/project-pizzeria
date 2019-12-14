@@ -108,12 +108,12 @@
 
       /* find the clickable trigger (the element that should react to clicking) */
 
-      const clickedElement = thisProduct.element.querySelector(select.menuProduct.clickable);
-      console.log('click', clickedElement);
+      /*const clickedElement = thisProduct.element.querySelector(select.menuProduct.clickable);
+      console.log('click', clickedElement);*/
 
       /* START: click event listener to trigger */
     
-        clickedElement.addEventListener('click', function(event){
+        thisProduct.accordionTrigger.addEventListener('click', function(event){
           console.log('clicked');     
 
         /* prevent default action for event */  
@@ -147,6 +147,16 @@
           }
         });
         /* END: click event listener to trigger */    
+    }
+    initOrderForm(){
+      const thisProduct = this;
+
+      console.log(initOrderForm, 'initOrderForm');
+    }
+    processOrder(){
+      const thisProduct = this;
+
+      console.log(processOrder, 'processOrder');
     }
   }
 
