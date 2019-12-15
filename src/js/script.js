@@ -71,6 +71,8 @@
       thisProduct.initOrderForm();
 
       thisProduct.processOrder();
+      
+      thisProduct.initAmountWidget();
 
       console.log('New Product:', thisProduct);
     }
@@ -105,6 +107,7 @@
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
     }
 
     initAccordion(){
@@ -119,7 +122,7 @@
       /* START: click event listener to trigger */
     
         thisProduct.accordionTrigger.addEventListener('click', function(event){
-          console.log('clicked');     
+          //console.log('clicked');     
 
         /* prevent default action for event */  
         
@@ -132,7 +135,7 @@
         /* find all active products */
 
         const activeProducts = document.querySelectorAll(select.all.menuProductsActive);
-        console.log(activeProducts, 'activeProduct');
+        //console.log(activeProducts, 'activeProduct');
 
           /* START LOOP: for each active product */
 
@@ -156,7 +159,7 @@
     initOrderForm(){
       const thisProduct = this;
 
-      console.log('initOrderForm');
+      //console.log('initOrderForm');
 
       thisProduct.form.addEventListener('submit', function(event){
         event.preventDefault();
@@ -177,10 +180,10 @@
     processOrder(){
       const thisProduct = this;
 
-      console.log('processOrder');
+      //console.log('processOrder');
 
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log('formData', formData);
+      //console.log('formData', formData);
 
       let price = thisProduct.data.price;
 
@@ -280,13 +283,28 @@
 
       thisProduct.priceElem.innerHTML = price;
     }
+
+    initAmountWidget(){
+      const thisProduct = this;
+
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+    }
+  }
+
+  class AmountWidget{
+    constructor(element){
+      const thisWidget = this;
+
+      console.log('AmountWidget', thisWidget);
+      console.log('contructor arguments:', element);
+    }
   }
 
   const app = {
     initMenu: function(){
       const thisApp = this;
 
-      console.log('thisApp.data:', thisApp.data);
+      //console.log('thisApp.data:', thisApp.data);
 
       for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
