@@ -69,10 +69,12 @@
       thisProduct.initAccordion();
 
       thisProduct.initOrderForm();
+      
+      thisProduct.initAmountWidget();
 
       thisProduct.processOrder();
       
-      thisProduct.initAmountWidget();
+      
 
       console.log('New Product:', thisProduct);
     }
@@ -177,6 +179,7 @@
         thisProduct.processOrder();
       });
     }
+    
     processOrder(){
       const thisProduct = this;
 
@@ -288,9 +291,9 @@
 
     initAmountWidget(){
       const thisProduct = this;
-
+  
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
-
+  
       thisProduct.amountWidgetElem.addEventListener('updated', function(){
         thisProduct.processOrder();
       });
