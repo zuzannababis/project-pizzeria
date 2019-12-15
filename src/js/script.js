@@ -209,9 +209,9 @@
 
             if(optionSelected && !option.default){
 
-            /* Add price of this option to the price */
+              /* Add price of this option to the price */
 
-            price += option.price;
+              price += option.price;
 
             /* END IF If the option is selected and the option is not default */
 
@@ -219,7 +219,7 @@
 
             /* START ELSE IF If the option is default and the option is not selected */
 
-            if(!optionSelected && option.default){
+            else if(!optionSelected && option.default){
 
             /* Deduct the price of this option from the price */
 
@@ -272,12 +272,14 @@
             /* END ELSE if the optin is not selected */
 
             }
-
             
         }
         /* END LOOP: for each optionId in param.options */
       }
       /* END LOOP: for each paramId in thisProduct.data.params */
+      /* multiply price by amount */
+      
+      price *= thisProduct.amountWidget.value;
 
       /* insert price value to thisProduct.priceElem */
 
@@ -288,6 +290,10 @@
       const thisProduct = this;
 
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+
+      thisProduct.amountWidgetElem.addEventListener('updated', function(){
+        thisProduct.processOrder();
+      });
     }
   }
 
@@ -298,6 +304,8 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
+
+      thisWidget.value = settings.amountWidget.defaultValue;
 
       thisWidget.setValue(thisWidget.input.value);
 
@@ -325,7 +333,11 @@
 
       /* TODO: Add validation */
 
-      thisWidget.value = newValue;
+      if(newValue !== thisWidget.value && newValue >= settings.amountWidget.defaultMin && newValue <= settings.amountWidget.defaultMax){
+
+        thisWidget.value = newValue;
+        thisWidget.announce();
+      }
 
       thisWidget.input.value = thisWidget.value;
 
@@ -347,9 +359,14 @@
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
         thisWidget.setValue(thisWidget.value + 1);
-      });
+      });   
+    }
 
-    
+    announce(){
+      const thisWidget = this;
+
+      const event = new Event('updated');
+      thisWidget.element.dispatchEvent(event);
     }
 
   }
