@@ -104,6 +104,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -225,6 +226,51 @@
 
             }
 
+            /* find all images for options */
+
+            const images = thisProduct.imageWrapper.querySelectorAll('.' + paramId + '-' + optionId);
+
+            /* START IF If the option is selected */
+
+            if(optionSelected){
+
+              /* START LOOP for each image */
+
+              for(let image of images){
+
+                /* add class active on each image */
+
+                image.classList.add(classNames.menuProduct.imageVisible);
+
+              /* END LOOP for each image */
+
+              }
+
+            /* END IF If the option is selected */
+
+            }
+
+            /* START ELSE If the option is not selected */
+
+            else {
+
+              /* START LOOP for each image */
+
+              for(let image of images){
+
+                /* remove calss active */
+
+                image.classList.remove(classNames.menuProduct.imageVisible);
+
+              /* END LOOP for each image */
+
+              }
+
+            /* END ELSE if the optin is not selected */
+
+            }
+
+            
         }
         /* END LOOP: for each optionId in param.options */
       }
