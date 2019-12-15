@@ -68,6 +68,10 @@
 
       thisProduct.initAccordion();
 
+      thisProduct.initOrderForm();
+
+      thisProduct.processOrder();
+
       console.log('New Product:', thisProduct);
     }
 
@@ -151,12 +155,84 @@
     initOrderForm(){
       const thisProduct = this;
 
-      console.log(initOrderForm, 'initOrderForm');
+      console.log('initOrderForm');
+
+      thisProduct.form.addEventListener('submit', function(event){
+        event.preventDefault();
+        thisProduct.processOrder();
+      });
+      
+      for(let input of thisProduct.formInputs){
+        input.addEventListener('change', function(){
+          thisProduct.processOrder();
+        });
+      }
+      
+      thisProduct.cartButton.addEventListener('click', function(event){
+        event.preventDefault();
+        thisProduct.processOrder();
+      });
     }
     processOrder(){
       const thisProduct = this;
 
-      console.log(processOrder, 'processOrder');
+      console.log('processOrder');
+
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      console.log('formData', formData);
+
+      let price = thisProduct.data.price;
+
+      /* START LOOP: for each paramId in thisProduct.data.params */
+
+      for(let paramId in thisProduct.data.params){
+
+        /* save the element in thisProduct.data.params with key paramId as const param */
+
+        const param = thisProduct.data.params[paramId];
+
+        /* START LOOP: for each optionId in param.options */
+
+        for(let optionId in param.options){
+
+          /* save the element in param.options with key optionId as const option */
+
+          const option = param.options[optionId];
+
+          const optionSelected = formData.hasOwnProperty(paramId) && formData[paramId].indexOf(optionId) > -1;
+
+            /* START IF If the option is selected and the option is not default */
+
+            if(optionSelected && !option.default){
+
+            /* Add price of this option to the price */
+
+            price += option.price;
+
+            /* END IF If the option is selected and the option is not default */
+
+            }
+
+            /* START ELSE IF If the option is default and the option is not selected */
+
+            if(!optionSelected && option.default){
+
+            /* Deduct the price of this option from the price */
+
+            price -= option.price;
+            
+            /* END ELSE IF If the option is default and the option is not selected */
+
+            }
+
+        }
+        /* END LOOP: for each optionId in param.options */
+      }
+      /* END LOOP: for each paramId in thisProduct.data.params */
+
+      /* insert price value to thisProduct.priceElem */
+
+      thisProduct.priceElem.innerHTML = price;
     }
   }
 
