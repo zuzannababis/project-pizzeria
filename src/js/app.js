@@ -1,10 +1,8 @@
+import {settings, select} from './settings.js';
+import Product from './components/Product.js';
+import Cart from './components/Cart.js';
 
-
-  
-  // eslint-disable-next-line no-unused-vars
-  
-
-  const app = {
+const app = {
     initMenu: function(){
       const thisApp = this;
 
@@ -57,7 +55,7 @@
       //thisApp.initMenu();
       thisApp.initCart();
     },
-  };
+};
 
-  app.init();
+app.init();
 
