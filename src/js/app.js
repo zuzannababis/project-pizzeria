@@ -1,8 +1,18 @@
 import {settings, select, classNames, templates} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
+import Booking from './components/Booking.js';
 
 const app = {
+
+  initBooking: function(){
+    const thisApp = this;
+
+    const widgetContainer = document.querySelector(select.containerOf.booking);
+    thisApp.booking = new Booking(widgetContainer); 
+
+  },
+
 
   initPages: function(){
     const thisApp = this;
@@ -59,7 +69,7 @@ const app = {
       );
     }
 
-},
+  },
 
   initMenu: function(){
     const thisApp = this;
@@ -101,7 +111,7 @@ const app = {
   initCart: function(){
     const thisApp = this;
 
-    const cartElem= document.querySelector(select.containerOf.cart);
+    const cartElem = document.querySelector(select.containerOf.cart);
     thisApp.cart = new Cart(cartElem);
 
     thisApp.productList = document.querySelector(select.containerOf.menu);
@@ -122,6 +132,7 @@ const app = {
     //thisApp.initMenu();
     thisApp.initCart();
     thisApp.initPages();
+    thisApp.initBooking();
   },
 };
 
