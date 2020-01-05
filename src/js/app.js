@@ -8,8 +8,8 @@ const app = {
   initBooking: function(){
     const thisApp = this;
 
-    const widgetContainer = document.querySelector(select.containerOf.booking);
-    thisApp.booking = new Booking(widgetContainer); 
+    const bookingWidget = document.querySelector(select.containerOf.booking);
+    thisApp.booking = new Booking(bookingWidget); 
 
   },
 
