@@ -25,19 +25,10 @@ class AmountWidget extends BaseWidget{
 
     }
 
-
-    parseValue(value){
-
-      return parseInt(value);
-
-    }
-
     isValid(value){
-
       return !isNaN(value)
         && value >= settings.amountWidget.defaultMin 
         && value <= settings.amountWidget.defaultMax;
-
     }
 
     renderValue(){
@@ -51,10 +42,11 @@ class AmountWidget extends BaseWidget{
       const thisWidget = this;
 
       thisWidget.dom.input.addEventListener('change', function(){
-        thisWidget.setValue(thisWidget.dom.input.value);
+        //thisWidget.setValue(thisWidget.dom.input.value);
+        thisWidget.value = thisWidget.dom.input.value;
       });
 
-      thisWidget.linkDecrease.addEventListener('click', function(event){
+      thisWidget.dom.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
         thisWidget.setValue(thisWidget.value - 1);
       });
