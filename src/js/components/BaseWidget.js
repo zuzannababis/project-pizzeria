@@ -1,4 +1,3 @@
-/* global flatpickr */
 /* global rangeSlider */
 
 class BaseWidget{
