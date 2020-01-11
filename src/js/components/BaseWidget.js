@@ -1,4 +1,4 @@
-/* global rangeSlider */
+
 
 class BaseWidget{
   constructor(wrapperElement, initialValue){
@@ -30,8 +30,8 @@ class BaseWidget{
       thisWidget.announce();
     }
   
-      thisWidget.renderValue(); 
-    }
+    thisWidget.renderValue(); 
+  }
 
   setValue(value){
     const thisWidget = this;
@@ -44,7 +44,7 @@ class BaseWidget{
   }
   
   isValid(value){
-    return !isNaN(value)
+    return !isNaN(value);
   }
 
   renderValue(){

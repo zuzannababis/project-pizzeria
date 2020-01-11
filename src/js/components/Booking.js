@@ -13,6 +13,7 @@ class Booking {
     thisBooking.render(bookingWidget);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.bookTable();
   }
 
   getData(){
@@ -119,6 +120,17 @@ class Booking {
     }       
   } 
 
+  bookTable(){
+    const thisBooking = this;
+
+    for(let table of thisBooking.dom.tables){
+      table.addEventListener('click', function(){
+        table.classList.toggle(classNames.booking.tableBooked);
+       
+      });
+    }
+  }
+
   updateDOM(){
     const thisBooking = this;
 
@@ -141,9 +153,10 @@ class Booking {
         tableId = parseInt(tableId);
       }
             
-      if(!allAvailable
+      if(
+        !allAvailable
         &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId) > -1
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ){
         table.classList.add(classNames.booking.tableBooked);
       } else {
