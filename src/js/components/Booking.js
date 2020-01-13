@@ -148,7 +148,7 @@ class Booking {
       address: thisBooking.dom.address.value,
       phone: thisBooking.dom.phone.value,
       peopleAmount: thisBooking.peopleAmount.value,
-      hoursAmount: thisBooking.hoursAmount.value,
+      duration: thisBooking.hoursAmount.value,
       starters: [],
       table: parseInt(thisBooking.bookedTable),
       date: thisBooking.datePicker.value,
@@ -176,7 +176,7 @@ class Booking {
         return response.json();          
       }).then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
-        thisBooking.makeBooked(payload.date, payload.hour , payload.table , payload.hoursAmount);
+        thisBooking.makeBooked(payload.date, payload.hour , payload.table , payload.duration);
       
       });
   }
