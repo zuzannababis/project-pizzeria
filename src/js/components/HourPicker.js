@@ -2,45 +2,47 @@ import BaseWidget from './BaseWidget.js';
 import {settings, select} from '../settings.js';
 import {utils} from '../utils.js';
 
+/* global rangeSlider */
+
 class HourPicker extends BaseWidget{
 
-    constructor(wrapper){
-        super(wrapper, settings.hours.open);
+  constructor(wrapper){
+    super(wrapper, settings.hours.open);
 
-        const thisWidget = this;
+    const thisWidget = this;
 
-        thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.input);
-        thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.output);
+    thisWidget.dom.input = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.input);
+    thisWidget.dom.output = thisWidget.dom.wrapper.querySelector(select.widgets.hourPicker.output);
 
-        thisWidget.initPlugin();
-        thisWidget.value = thisWidget.dom.input.value;
-    }
+    thisWidget.initPlugin();
+    thisWidget.value = thisWidget.dom.input.value;
+  }
 
-    initPlugin(){
-        const thisWidget = this;
+  initPlugin(){
+    const thisWidget = this;
 
-        rangeSlider.create(thisWidget.dom.input);
+    rangeSlider.create(thisWidget.dom.input);
 
-        thisWidget.dom.input.addEventListener('input', function(){
-            thisWidget.value = thisWidget.dom.input.value;
-        });
+    thisWidget.dom.input.addEventListener('input', function(){
+      thisWidget.value = thisWidget.dom.input.value;
+    });
        
-    }
+  }
 
-    parseValue(value){
+  parseValue(value){
 
-        return utils.numberToHour(value);
-    }
+    return utils.numberToHour(value);
+  }
 
-    isValid(){
-        return true;
-    }
+  isValid(){
+    return true;
+  }
 
-    renderValue(){
-        const thisWidget = this;
+  renderValue(){
+    const thisWidget = this;
 
-        thisWidget.dom.output.innerHTML = thisWidget.value;
-    }
+    thisWidget.dom.output.innerHTML = thisWidget.value;
+  }
 }
 
 

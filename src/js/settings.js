@@ -1,3 +1,5 @@
+/* global Handlebars */
+
 export const select = {
     templateOf: {
       menuProduct: '#template-menu-product',
@@ -61,6 +63,10 @@ export const select = {
         peopleAmount: '.people-amount',
         hoursAmount: '.hours-amount',
         tables: '.floor-plan .table',
+        address: '.order-confirmation [name="address"]',
+        phone: '.order-confirmation [name="phone"]',
+        starters: '[name="starter"]',
+        submit: '.booking-form [type="submit"]',
     },
     nav: {
         links: '.main-nav a',
