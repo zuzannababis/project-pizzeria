@@ -5,12 +5,16 @@ export const select = {
       menuProduct: '#template-menu-product',
       cartProduct: '#template-cart-product', 
       bookingWidget: '#template-booking-widget',
+      homePage: '#template-home-widget',
     },
     containerOf: {
       menu: '#product-list',
       cart: '#cart',
       pages: '#pages',
       booking: '.booking-wrapper',
+      slideshow: '.slideshow-container',
+      dots: '.dots',
+      home: '.home-wrapper',
     },
     all: {
       menuProducts: '#product-list > .product',
@@ -82,15 +86,19 @@ export const classNames = {
       wrapperActive: 'active',
     },
     booking: {
-        loading: 'loading',
-        tableBooked: 'booked',
+      loading: 'loading',
+      tableBooked: 'booked',
     },
     nav: {
-        active: 'active',
+      active: 'active',
     },
     pages: {
-        active: 'active',
+      active: 'active',
     },
+    slideshow: {
+      slides: 'active',
+      dots: 'active',
+    }
 };
   
 export const settings = {
@@ -122,6 +130,9 @@ export const settings = {
       dateEndParamKey: 'date_lte',
       notRepeatParam: 'repeat=false',
       repeatParam: 'repeat_ne=false',
+    },
+    slideshowTime: {
+      time: 3000,
     },
 };
   
