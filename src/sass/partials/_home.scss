@@ -11,7 +11,8 @@
     flex-basis: 48%;
     margin: 10px 6px;
     width: 50%;
-    height: 120px;  
+    height: 120px; 
+    cursor: pointer; 
     img {
         object-fit: cover;
         width: 100%;
@@ -24,7 +25,6 @@
     text-align: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    cursor: pointer;
 }
 .title {
     position: absolute;
@@ -44,7 +44,7 @@
     opacity: 0;
     transition: 0.5s;
 }
-.info:hover {
+.info-photo:hover {
     p {
         opacity: 1;
     }
@@ -58,6 +58,7 @@
     border-radius: 4px;
     color: #ffffff;
     margin: 0 5px 50px 5px;
+    cursor: pointer;
     h2 {
         margin: 30px 0 5px 0;
         font-family: $font-header;
@@ -85,6 +86,7 @@
         height: 190px;
         display: inline-block;
         width: 100%;
+        border-radius: 4px;
     }
 }
 
@@ -133,27 +135,91 @@
 .dot:hover {
     background-color: #717171;
 }
-.row {
-    display: block;
-}
 .gallery {
-    margin: 70px 5px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    margin: 100px 0 0;
 }
-.gallery-img {
+.gallery-tile {
+    flex-basis: 32%;
+    height: 190px;
+    width: 150px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+    position: relative;
     display: inline-block;
-    margin: 5px;
     img {
-        object-fit: cover;
-        height: 200px;
-        display: inline-block;
+        height: 100%;
         width: 100%;
-        opacity: 1;
-        transition: 1s;
+        object-fit: cover;
+        border-radius: 3px;
     }
-    img:hover {
-        opacity: 0.7;
-        cursor: pointer;       
+}
+.gallery-pic {
+    display: block;
+    width: 150px;
+    height: 190px;
+}
+
+.overlay {
+    position: absolute;
+    transition: all .3s ease;
+    opacity: 0;    
+    i {
+      top: 50%;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+}
+
+.gallery-tile:hover .overlay {
+    opacity: 0.1;
+}
+
+.iconsOverlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #312f2f82;
+}
+
+.gallery-tile:hover .iconsOverlay {
+    width: 100%;
+}
+
+.gallery-icons {
+    color: $color-light;
+    position: absolute;
+    font-size: 22px;
+    cursor: pointer; 
+    i {
+      display: inline-block;
+      left: 5%;
+      top: 40%;
+      transform: translate(-50%);
+      position: relative;
+    }
+}
+
+.gallery-tile:hover>.gallery-icons {
+    display: inline-block;
+    opacity: 1;
+}
+
+.gallery-icons>.fa-heart:hover {
+    color: $color-main;
+    opacity: 1;
+}
+  
+.gallery-icons>.fa-share-alt:hover {
+    color: $color-main;
+    opacity: 1;
 }
 
 .link {
