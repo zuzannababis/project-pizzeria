@@ -124,6 +124,19 @@ const app = {
     });
   },
 
+  initSlideshow: function(){
+    const thisApp = this;
+
+    const slides = document.querySelectorAll(select.containerOf.slides);
+
+    let i = 0;
+
+    const dots = document.querySelectorAll('.dots span');
+
+    
+
+  },
+
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
