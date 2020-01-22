@@ -73,7 +73,7 @@ export const select = {
         submit: '.booking-form [type="submit"]',
     },
     nav: {
-        links: '.main-nav a',
+        links: '.page-links a',
     },
 };
   
