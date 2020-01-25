@@ -131,9 +131,6 @@ export const settings = {
       notRepeatParam: 'repeat=false',
       repeatParam: 'repeat_ne=false',
     },
-    slideshowTime: {
-      time: 3000,
-    },
 };
   
 export const templates = {

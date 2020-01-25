@@ -126,16 +126,49 @@ const app = {
 
   initSlideshow: function(){
     const thisApp = this;
-
-    const slides = document.querySelectorAll(select.containerOf.slides);
-
+    
     let i = 0;
 
-    const dots = document.querySelectorAll('.dots span');
+    const currentSlide = [];
 
-    
+      currentSlide[0] = {
+        class: '.slide-1',
+      }
+      currentSlide[1] = {
+        class: '.slide-2',
+      }
+      currentSlide[2] = {
+        class: '.slide-3',
+      }
 
+    const slideshow = function(){
+
+      thisApp.slides = document.querySelectorAll('.slideshow-container .slide');
+
+      //console.log(slide, 'current slides');   
+
+      for(let slide of thisApp.slides){
+        if(slide.classList.contains('active')){
+          slide.classList.remove('active');
+        }
+        if (slide.id == i + 1) {
+           //console.log(slide.id, "slide id");
+          slide.classList.add('active');
+        } 
+      }
+
+      if (i < currentSlide.length - 1) {
+        i++;
+      } else {
+        i = 0;
+      }
+    }
+
+    const sliderInterval = setInterval(slideshow, 3000);
+    console.log(sliderInterval,'interval');
+  
   },
+  
 
   init: function(){
     const thisApp = this;
@@ -149,6 +182,7 @@ const app = {
     thisApp.initCart();
     thisApp.initPages();
     thisApp.initBooking();
+    thisApp.initSlideshow();
   },
 };
 
