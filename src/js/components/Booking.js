@@ -98,7 +98,10 @@ class Booking {
     console.log('thisBooking.booked', thisBooking.booked);
 
     thisBooking.updateDOM();
+    thisBooking.sliderColor();
   }
+
+  
 
   makeBooked(date, hour, duration, table){
     const thisBooking = this;
