@@ -3,6 +3,7 @@ import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
 
+
 const app = {
 
   initBooking: function(){
@@ -51,6 +52,7 @@ const app = {
     }
   },
 
+
   activatePage: function(pageId){
     const thisApp = this;
 
@@ -70,6 +72,7 @@ const app = {
     }
 
   },
+
 
   initMenu: function(){
     const thisApp = this;
@@ -121,6 +124,52 @@ const app = {
     });
   },
 
+  initSlideshow: function(){
+    const thisApp = this;
+    
+    let i = 0;
+
+    const currentSlide = [];
+
+      currentSlide[0] = {
+        class: '.slide-1',
+      }
+      currentSlide[1] = {
+        class: '.slide-2',
+      }
+      currentSlide[2] = {
+        class: '.slide-3',
+      }
+
+    const slideshow = function(){
+
+      thisApp.slides = document.querySelectorAll('.slideshow-container .slide');
+
+      //console.log(slide, 'current slides');   
+
+      for(let slide of thisApp.slides){
+        if(slide.classList.contains('active')){
+          slide.classList.remove('active');
+        }
+        if (slide.id == i + 1) {
+           //console.log(slide.id, "slide id");
+          slide.classList.add('active');
+        } 
+      }
+
+      if (i < currentSlide.length - 1) {
+        i++;
+      } else {
+        i = 0;
+      }
+    }
+
+    const sliderInterval = setInterval(slideshow, 3000);
+    console.log(sliderInterval,'interval');
+  
+  },
+  
+
   init: function(){
     const thisApp = this;
     console.log('*** App starting ***');
@@ -133,6 +182,7 @@ const app = {
     thisApp.initCart();
     thisApp.initPages();
     thisApp.initBooking();
+    thisApp.initSlideshow();
   },
 };
 

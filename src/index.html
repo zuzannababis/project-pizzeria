@@ -20,7 +20,8 @@
           <h1 class="logo__title"><span>Mamma</span>Mia!</h1>
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
-        <div class="main-nav">
+        <div class="main-nav page-links">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -60,8 +61,93 @@
       </div>
     </div>
   </header>
-
   <div id="pages">
+    <section id="home">
+      <div class="home-wrapper container">
+        <div class="info">
+          <div class="info-photo page-links">
+            <img src="images/pizza-1.jpg" alt="photo">
+            <a href="#order" class="title">ORDER ONLINE</a>
+            <p class="subtitle">Delicious food delivered to your door</p>           
+          </div>
+          <div class="info-photo page-links">
+            <img src="images/pizza-2.jpg" alt="photo">
+            <a href="#booking" class="title">BOOK A TABLE</a>
+            <p class="subtitle">Pick a date and enjoy your meal</p>
+          </div>
+          <div class="hours">
+            <h2>OPENING HOURS:</h2>
+            <p>TUE-SUN, 12PM - 12 AM</p>
+          </div>
+        </div>      
+        <div class="slideshow-container">
+          <div class="img-wrapper">
+            <img src="images/pizza-3.jpg" alt="photo">
+          </div>
+          <div id="1" class="slide active slide-1">             
+            <h2 class="quote-title">FEED ME BABY ONE MORE TIME!</h2>
+            <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia molestie mi sit amet cursus. Aenean vitae fringilla lectus, viverra malesuada sem.</p>
+            <p class="author">- Britney Spears</p>
+          </div>
+          <div id="2" class="slide slide-2">
+            <h2 class="quote-title">I'M CRAZY IN LOVE WITH THIS FOOD!</h2>
+            <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia molestie mi sit amet cursus. Aenean vitae fringilla lectus, viverra malesuada sem.</p>
+            <p class="author">- Beyonce</p>
+          </div>
+          <div id="3" class="slide slide-3">
+            <h2 class="quote-title">THIS PLACE HAS GOOD VIBRATIONS!</h2>
+            <p class="quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia molestie mi sit amet cursus. Aenean vitae fringilla lectus, viverra malesuada sem.</p>
+            <p class="author">- The Beach Boys</p>      
+          </div>                           
+        </div>
+        <div class="gallery">        
+          <div class="gallery-tile">
+            <img src="images/pizza-4.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="gallery-tile">
+            <img src="images/pizza-5.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="gallery-tile">
+            <img src="images/pizza-6.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>                  
+          <div class="gallery-tile">
+            <img src="images/pizza-7.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="gallery-tile">
+            <img src="images/pizza-8.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+          <div class="gallery-tile">
+            <img src="images/pizza-9.jpg" alt="photo" class="gallery-pic">
+            <div class="gallery-icons overlay iconsOverlay">
+              <i class="fas fa-heart"></i>
+              <i class="fas fa-share-alt"></i>
+            </div>
+          </div>
+        </div>
+        <br>
+        <a href="#" class="link">View more on Instagram</a>     
+      </div>
+    </section> 
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -69,7 +155,6 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
-
   <script id="template-booking-widget" type="text/x-handlebars-template">
     <div class="booking-widget">
       <h2 class="page__title no-spacing">Book a table</h2>

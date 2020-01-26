@@ -5,12 +5,16 @@ export const select = {
       menuProduct: '#template-menu-product',
       cartProduct: '#template-cart-product', 
       bookingWidget: '#template-booking-widget',
+      homePage: '#template-home-widget',
     },
     containerOf: {
       menu: '#product-list',
       cart: '#cart',
       pages: '#pages',
       booking: '.booking-wrapper',
+      slides: '.slide',
+      dots: '.dots',
+      home: '.home-wrapper',
     },
     all: {
       menuProducts: '#product-list > .product',
@@ -69,7 +73,7 @@ export const select = {
         submit: '.booking-form [type="submit"]',
     },
     nav: {
-        links: '.main-nav a',
+        links: '.page-links a',
     },
 };
   
@@ -82,15 +86,19 @@ export const classNames = {
       wrapperActive: 'active',
     },
     booking: {
-        loading: 'loading',
-        tableBooked: 'booked',
+      loading: 'loading',
+      tableBooked: 'booked',
     },
     nav: {
-        active: 'active',
+      active: 'active',
     },
     pages: {
-        active: 'active',
+      active: 'active',
     },
+    slideshow: {
+      slides: 'active',
+      dots: 'active',
+    }
 };
   
 export const settings = {
