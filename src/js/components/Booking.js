@@ -98,7 +98,45 @@ class Booking {
     console.log('thisBooking.booked', thisBooking.booked);
 
     thisBooking.updateDOM();
+    thisBooking.sliderColor();
   }
+
+  sliderColor(){
+    const thisBooking = this;
+
+    const bookings = thisBooking.booked[thisBooking.date];
+
+    const rangeSlider = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.slider);
+
+    const colors = [];
+
+    for (let booking in bookings) {
+
+      //console.log(booking, 'booking');
+
+      const start = ((booking - 12) * 100) / 12;
+      const end = (((booking - 12) + .5) * 100) / 12;
+      //console.log(start, 'start');
+      //console.log(end, 'end');
+
+      if (bookings[booking].length <= 1) {
+        colors.push('/*' + booking + '*/green ' + start + '%, green ' + end + '%');
+      } else if (bookings[booking].length == 2) {
+        colors.push('/*' + booking + '*/orange ' + start + '%, orange ' + end + '% ');
+      } else if (bookings[booking].length == 3) {
+        colors.push('/*' + booking + '*/red ' + start + '%, red ' + end + '%');
+      }
+      
+    }
+
+    colors.sort();
+    const newSlider = colors.join(', ');
+    rangeSlider.style.background = 'linear-gradient(to right, ' + newSlider + ')';
+
+    //console.log(newSlider, 'new slider');
+  
+  }
+
 
   makeBooked(date, hour, duration, table){
     const thisBooking = this;
