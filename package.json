@@ -47,5 +47,9 @@
         "onchange": "^5.2.0",
         "stylelint": "^9.10.1",
         "stylelint-scss": "^3.5.4"
+    },
+    "engines": {
+        "node": "10.17.0",
+        "npm": "6.11.3"
     }
 }
