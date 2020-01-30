@@ -81,7 +81,7 @@ class Cart{
       .then(function(response){
         return response.json();          
       }).then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
+        //console.log('parsedResponse', parsedResponse);
       });
   }
 
@@ -121,9 +121,9 @@ class Cart{
 
     thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
 
-    console.log(thisCart.totalNumber, 'total number');
-    console.log(thisCart.subtotalPrice, 'subtotal');
-    console.log(thisCart.totalPrice, 'total price');
+    //console.log(thisCart.totalNumber, 'total number');
+    //console.log(thisCart.subtotalPrice, 'subtotal');
+    //console.log(thisCart.totalPrice, 'total price');
 
     for(let key of thisCart.renderTotalsKeys){
       for (let elem of thisCart.dom[key]){

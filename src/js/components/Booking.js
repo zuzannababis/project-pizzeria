@@ -95,7 +95,7 @@ class Booking {
       }           
     }
 
-    console.log('thisBooking.booked', thisBooking.booked);
+    //console.log('thisBooking.booked', thisBooking.booked);
 
     thisBooking.updateDOM();
     thisBooking.sliderColor();
@@ -213,7 +213,7 @@ class Booking {
       .then(function(response){
         return response.json();          
       }).then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
+        //console.log('parsedResponse', parsedResponse);
         thisBooking.makeBooked(payload.date, payload.hour , payload.table , payload.duration);
       
       });

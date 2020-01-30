@@ -82,7 +82,7 @@ class CartProduct{
       priceSingle: thisCartProduct.priceSingle,
       params: thisCartProduct.params,
     };
-    console.log(orderedProduct, 'ordered product');  
+    //console.log(orderedProduct, 'ordered product');  
       
     return orderedProduct;
   }

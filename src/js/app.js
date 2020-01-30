@@ -96,7 +96,7 @@ const app = {
         return rawResponse.json();
       })
       .then(function(parsedResponse){
-        console.log(parsedResponse, 'parsedResponse');
+        //console.log(parsedResponse, 'parsedResponse');
 
         /*save parsedResponse as thisApp.data.products */
 
@@ -108,7 +108,7 @@ const app = {
 
       });
 
-    console.log('thisApp.data', JSON.stringify(thisApp.data));
+    //console.log('thisApp.data', JSON.stringify(thisApp.data));
   },
 
   initCart: function(){
@@ -165,18 +165,18 @@ const app = {
     }
 
     const sliderInterval = setInterval(slideshow, 3000);
-    console.log(sliderInterval,'interval');
+    //console.log(sliderInterval,'interval');
   
   },
   
 
   init: function(){
     const thisApp = this;
-    console.log('*** App starting ***');
-    console.log('thisApp:', thisApp);
-    console.log('classNames:', classNames);
-    console.log('settings:', settings);
-    console.log('templates:', templates);
+    //console.log('*** App starting ***');
+    //console.log('thisApp:', thisApp);
+    //console.log('classNames:', classNames);
+    //console.log('settings:', settings);
+    //console.log('templates:', templates);
     thisApp.initData();
     //thisApp.initMenu();
     thisApp.initCart();
