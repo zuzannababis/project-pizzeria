@@ -1,4 +1,4 @@
-import {settings, select, classNames, templates} from './settings.js';
+import {settings, select, classNames} from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
@@ -164,7 +164,7 @@ const app = {
       }
     }
 
-    const sliderInterval = setInterval(slideshow, 3000);
+    setInterval(slideshow, 3000);
     //console.log(sliderInterval,'interval');
   
   },
