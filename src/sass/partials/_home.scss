@@ -6,13 +6,15 @@
   border-radius: $radius;
   max-width: 700px;
 }
+
 .info-photo {
   position: relative;
   flex-basis: 48%;
   margin: 10px 6px;
   width: 50%;
-  height: 120px; 
-  cursor: pointer; 
+  height: 120px;
+  cursor: pointer;
+
   img {
     object-fit: cover;
     width: 100%;
@@ -20,6 +22,7 @@
     border-radius: 4px;
   }
 }
+
 .info {
   display: flex;
   text-align: center;
@@ -27,6 +30,7 @@
   justify-content: space-between;
   margin: 0 0 70px 0;
 }
+
 .title {
   position: absolute;
   top: 25%;
@@ -37,6 +41,7 @@
   font-size: 25px;
   text-decoration: none;
 }
+
 .subtitle {
   position: absolute;
   top: 50%;
@@ -46,25 +51,30 @@
   opacity: 0;
   transition: 0.5s;
 }
+
 .info-photo:hover {
   p {
     opacity: 1;
   }
+
   a {
-    top: 15%;       
+    top: 15%;
   }
 }
+
 .hours {
   flex-basis: 100%;
   background-color: #ff6b6b;
   border-radius: 4px;
   color: #ffffff;
   margin: 0 5px 30px 5px;
+
   h2 {
     margin: 30px 0 5px 0;
     font-family: $font-header;
     font-size: 25px;
   }
+
   p {
     margin: 5px 0 30px 0;
     font-family: $font-text;
@@ -78,14 +88,16 @@
   vertical-align: top;
   display: none;
 }
+
 .slideshow-container .active {
   display: inline-block;
 }
 
-.img-wrapper {  
+.img-wrapper {
   margin: 0;
   display: inline-block;
   width: 30%;
+
   img {
     object-fit: cover;
     height: 190px;
@@ -99,10 +111,12 @@
   font-size: 20px;
   margin: 0 0 10px 0;
 }
+
 .quote {
   font-size: 13px;
   margin: 5px 0 10px 0;
 }
+
 .author {
   font-size: 13px;
   font-style: italic;
@@ -124,6 +138,7 @@
   align-content: space-between;
   margin: 100px 0 0;
 }
+
 .gallery-tile {
   flex-basis: 32%;
   height: 190px;
@@ -132,6 +147,7 @@
   margin-bottom: 10px;
   position: relative;
   display: inline-block;
+
   img {
     height: 100%;
     width: 100%;
@@ -139,6 +155,7 @@
     border-radius: 3px;
   }
 }
+
 .gallery-pic {
   display: block;
   width: 150px;
@@ -148,7 +165,8 @@
 .overlay {
   position: absolute;
   transition: all .3s ease;
-  opacity: 0;    
+  opacity: 0;
+
   i {
     top: 50%;
     left: 50%;
@@ -178,7 +196,8 @@
   color: $color-light;
   position: absolute;
   font-size: 22px;
-  cursor: pointer; 
+  cursor: pointer;
+
   i {
     display: inline-block;
     left: 5%;
